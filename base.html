@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Review Land{% endblock %}</title>
+   
+</head>
+<body>
+    <div class="container">
+        <header class="mt-3 mb-3">
+            <h1>{% block header %} App Header {% endblock %}</h1>
+        </header>
+        
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flashes">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  
+    
+</body>
+</html>

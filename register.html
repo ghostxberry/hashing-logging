@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Register User{% endblock %}
+
+{% block content %}
+    <h1>Register User</h1>
+    <form method="post" action="{{ url_for('register_user') }}">
+        {{ form.hidden_tag() }}
+        
+        <label for="{{ form.username.id }}">Choose a username:</label>
+        {{ form.username }}
+        {{ form.username.errors }}
+        <br>
+        
+        <label for="{{ form.password.id }}">Create password:</label>
+        {{ form.password }}
+        {{ form.password.errors }}
+        <br>
+        
+        <label for="{{ form.email.id }}">Enter your email address:</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+        <br>
+        
+        <label for="{{ form.first_name.id }}">First name:</label>
+        {{ form.first_name }}
+        {{ form.first_name.errors }}
+        <br>
+        
+        <label for="{{ form.last_name.id }}">Last name:</label>
+        {{ form.last_name }}
+        {{ form.last_name.errors }}
+        <br>
+        
+        {{ form.submit() }}
+    </form>
+{% endblock %}
